@@ -1,0 +1,648 @@
+@font-face {
+   font-family: "Roboto";
+   src: url(Roboto_Condensed/RobotoCondensed-Bold.ttf)
+}
+
+html {
+   width: 100%;
+   height: 100%;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   width: 100%;
+   height: 100%;
+   font-family: "Roboto";
+   color:white;
+   display: flex;
+   flex-direction: column;
+   font-size:25px ;
+}
+
+header {
+   width: 100%;
+   height: 15%;
+   display: flex;
+   align-items: center;
+}
+
+.monnom{
+   width: 10%;
+   height: 60%;
+   margin-left: 1%;
+   margin-right: 1%;
+   min-height: 100px;
+   min-width: 100px;
+   background-color: #050b26;
+   border-radius: 5px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   font-size: 1em;
+}
+
+.monnom p:first-child {
+   margin-bottom: 0px; /* marge inférieure plus petite */
+ }
+
+ .monnom p:nth-child(2) {
+   margin-top: 0px; /* marge inférieure plus petite */
+ }
+
+
+/*le ul qui contient les options de langue*/
+.langages {
+
+   justify-content: flex-start;
+   border-top-left-radius: 5px;
+   border-bottom-left-radius: 5px;
+
+}
+
+/*le nav , contient toutes les catégories du site + les langues si il y a*/
+nav {
+   font-size: 0.7em;
+   height: 100%;
+   width: 100%;
+   display: flex;
+   align-items: center;
+}
+
+/*comportement des ul du nav*/
+nav ul {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   width: 100%;
+   background-color: #050b26;
+   height: 90px;
+}
+
+
+nav li {
+   margin: 3%;
+   display: flex;
+}
+
+nav a {
+   cursor: pointer;
+   text-decoration: none;
+   color: white;
+   text-align: center;
+}
+
+/*style des des liens une fois visités*/
+nav a:visited {
+   color: white;
+}
+
+/*style des liens lorsque ils sont survolés*/
+header nav a:hover {
+   color: yellow;
+   border-radius: 5px;
+   text-decoration: underline;
+}
+
+/*permet de savoir sur quelle page on se trouve*/
+a#accueil,
+a#presentation,
+a#contact,
+a#mentions,
+a#peste,
+a#fr,
+a#eng {
+   color: yellow;
+   border-radius: 5px;
+   text-decoration: underline;
+}
+
+
+main {
+   width: 100%;
+   height: 73%;
+   background-image: url(background.png);
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin-bottom: 22px;
+}
+
+
+/*ce qui passe lorsque on sélectionne le texte*/
+p::-moz-selection,
+h3::-moz-selection,
+h2::-moz-selection,
+a::-moz-selection {
+   background-color: orange;
+   color: black;
+}
+
+
+.blocAccueil{
+   border-radius: 15px;
+   background-color: #b54343;
+   width: 25%; 
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   font-size: 0.9em;
+   padding: 1%;
+   align-items: center;
+   height: 60%;
+}
+
+main h2{
+   border-bottom: solid 2px black;
+}
+
+.presentationBio{
+   display: flex;
+}
+
+.presentationBio p{
+   width: 50%;
+}
+
+.presentationBio img{
+   border-radius: 50%; 
+   object-fit: cover;
+   width: 200px;
+   height: 200px;
+}
+
+.sommaireProjetHidden{
+   background-color: #050b26;
+   border-radius: 15px;
+   width: auto;
+   height: 70%;   
+   font-size:calc(12px + 0.5vw);
+   display: none;
+}
+
+.sommaireProjet{
+   background-color: #050b26;
+   border-radius: 15px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: auto;
+   height: 70%;   
+   font-size:calc(12px + 0.5vw);
+   
+}
+
+.sommaireProjet h3{
+   border-bottom: solid 2px white;
+}
+
+.sommaireProjet ul{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   width: 100%;
+}
+
+.sommaireProjet a{
+   text-decoration: none;
+   color: white;
+}
+
+.sommaireProjet li{
+   list-style: none;
+}
+
+.sommaireProjet a:visited{
+   color:white;
+}
+
+.sommaireProjet a:hover{
+   font-size: larger;
+   text-decoration: underline;
+   color: yellow;
+}
+
+.ensembleProjets{
+   width: 85%;
+   height: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   overflow-x: scroll;
+}
+
+.blocProjet{
+   border-radius: 15px;
+   height: auto;
+   width: 800px;
+   margin-top: 50px;
+}
+
+
+
+.blocProjet img{
+   border-radius: 15px;
+   width: 100%;
+   height: auto;
+   min-width: 250px;
+   object-fit: cover;
+}
+
+/*la div qui contient le défilement d'image*/
+#defiler {
+   width: 65%;
+   height: 250px;
+   overflow: hidden;
+   border: solid 1px black;
+   border-radius: 5px;
+}
+
+/*comportement de l'animation*/
+.imageAnimation {
+   display: flex;
+   animation-duration: 15s;
+   animation-name: accueilAnimation;
+   animation-iteration-count: infinite;
+   
+
+}
+
+.imageAnimation img{
+   width: 250px;
+}
+
+/*comportement de l'animation*/
+@keyframes accueilAnimation {
+   0% {
+      transform: translateX(0);
+   }
+
+   20% {
+      transform: translateX(-250px);
+   }
+
+   40% {
+      transform: translateX(-500px);
+   }
+
+   60% {
+      transform: translateX(-750px);
+   }
+
+   80% {
+      transform: translateX(-1000px);
+   }
+
+   100% {
+      transform: translateX(0);
+   }
+}
+
+
+/*le formulaire de la page contact*/
+form {
+   width: 40%;
+   padding: 20px;
+   background-color: #b54343;
+   border-radius: 15px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+            
+form h1{
+   font-size: larger;
+   border-bottom: solid 2px black;
+}
+
+/*tout sauf le titre du formulaire*/
+form .principal {
+   font-size: 0.8em;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+/*titre + zone de saisie*/
+form .principal .boite {
+   margin-top: 10px;
+   display: flex;
+   flex-direction: column;
+}
+
+/*comportement des boites de gauche (hors message)*/
+form .principal .gauche .boite input {
+   margin-top: 5px;
+   padding: 10px 10px;
+   border-radius: 5px;
+   border: 2px solid rgb(172, 127, 255);
+}
+
+
+form .principal .droite {
+   margin-left: 50px;
+}
+
+/*comportement de la boite message*/
+form .principal .droite .boite {
+   height: 100%;
+}
+
+/*comportement de la zone de texte du message*/
+form .principal .droite .boite textarea {
+   margin-top: 5px;
+   padding: 10px;
+   background-color: #f1f1f1;
+   border: 2px solid#747cdf;
+   border-radius: 5px;
+   resize: none;
+   height: 72%;
+   font-family: 'PT Sans', sans-serif;
+}
+
+/*style du bouton qui permet de valider le formulaire*/
+form .bouton button {
+   margin-top: 10px;
+   background-color: rgb(235, 144, 40);
+   font-size: 15px;
+   border: none;
+   padding: 10px 40px;
+   border-radius: 5px;
+   cursor: pointer;
+   margin-top: 10%;
+}
+
+form .bouton button:hover{
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+footer {
+   font-size: 0.8em;
+   height: 10%;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #050b26;
+}
+
+footer nav {
+   height: 65%;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}
+
+/*styles des icones des reseaux sociaux*/
+.fa {
+   padding: 0.7em;
+   width: 0.2em;
+   border-radius: 50%;
+   height: 0.2em;
+   display: flex !important;
+   justify-content: center !important;
+   align-items: center !important;
+   font-size: 2em !important;
+
+
+}
+
+.fa:hover {
+   opacity: 0.7;
+}
+
+.fa-github {
+   background-color: black;
+}
+
+.fa-twitter {
+   background-color: #55ACEE;
+}
+
+.fa-youtube {
+   background-color: red;
+}
+
+.fa-instagram {
+   background-color: orange;
+}
+
+.fa-linkedin {
+   background-color: rgb(30, 48, 80);
+}
+
+
+
+
+
+@media screen and (max-width:800px) {
+
+
+
+   header nav {
+      flex-direction: column-reverse;
+   }
+
+   .monnom{
+      flex-direction: row;
+      width: 100%;
+      height: 30%;
+      justify-content: center;
+      font-size: 50px;
+      border-radius: 0;
+      
+   }
+
+   .monnom p{
+      margin-left: 20px;
+   }
+
+
+
+   .monnom p:first-child {
+      margin-bottom: initial; /* marge inférieure plus petite */
+      margin-top: initial;
+    }
+   
+    .monnom p:nth-child(2) {
+      margin-top: initial; /* marge inférieure plus petite */
+      margin-bottom: initial;
+    }
+
+   header nav{
+      height: 70%;
+   }
+
+   header nav ul{
+      justify-content: space-around;
+      background-color: #050b26;
+      margin-top: 0.5px;
+      margin-bottom: 0.5px;
+      height: 60%;
+      width: 100%;
+      padding: 0;
+   }
+
+   header nav ul.langages {
+      
+      justify-content: center;
+      height: 40%;
+      border-radius: 0;
+   }
+
+   header {
+      height: 50%;
+      flex-direction: column;
+      position: sticky;
+      top:0;
+      background-color: white;
+      
+   }
+
+   main{
+      height: auto;
+      margin-bottom: 0;
+      margin-top: -0.5px; 
+      
+   }
+
+   .presentationBio{
+      display: block;
+   }
+
+   .presentationBio img{
+      float:right;
+      border-radius: 50%; 
+      object-fit: cover;
+      width: 150px;
+      height: 150px;
+   }  
+
+   footer{
+      position: sticky;
+      bottom: 0;
+   }
+
+}
+
+@media screen and (max-width:1266px){
+   #accueil{
+      flex-direction: column;
+      height: auto;
+      flex-wrap: nowrap;
+   }
+
+   .blocAccueil{
+      width: 60%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+   }
+}
+
+
+@media screen and (max-width:1110px) {
+
+   main{
+      height: auto;
+      flex-wrap: wrap;
+   }
+
+   form {
+      margin-top: 15px; 
+      margin-bottom: 15px;
+      width: auto;
+   }
+
+   .principal {
+      width: auto;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
+
+   .droite {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   form .principal .droite {
+      margin-left: 0;
+   }
+
+   .boite {
+      align-items: center;
+   }
+
+
+   .ensembleProjets{
+      height: auto;
+   }
+
+   .sommaireProjet{
+      display: none;
+   }
+
+   .sommaireProjetHidden{
+     margin-top: 5px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: auto;
+     min-width: 20%;
+     height: auto;   
+     font-size:calc(12px + 0.5vw);
+   }
+
+
+   .sommaireProjetHidden ul{
+      display: none;
+    }
+
+    #toggleSommaire {
+      visibility: hidden;
+    }
+    
+    /* Style the label to resemble a button */
+    #toggleSommaireLabel {
+      cursor: pointer;
+      background-color: #050b26;
+      color: white;
+      border-radius: 5px;
+      display: inline-block;
+    }
+  
+   #toggleSommaire:checked ~ ul{
+      list-style: none;
+      display: flex;
+   }
+
+   .sommaireProjetHidden ul{
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+   }
+   
+   .sommaireProjetHidden a{
+      text-decoration: none;
+      color: white;
+   }
+   
+   .sommaireProjetHidden li{
+      list-style: none;
+   }
+   
+   .sommaireProjetHidden a:visited{
+      color:white;
+   }
+   
+   .sommaireProjetHidden a:hover{
+      font-size: larger;
+      text-decoration: underline;
+      color: yellow;
+   }
+    
+    
+}
