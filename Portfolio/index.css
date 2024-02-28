@@ -122,7 +122,7 @@ a#eng {
 main {
    width: 100%;
    height: 73%;
-   background-image: url(images/background.png);
+   background-image: url(images/background.webp);
    display: flex;
    justify-content: space-around;
    align-items: center;
@@ -146,6 +146,16 @@ a::-moz-selection {
    width: 25%; 
    display: flex;
    flex-direction: column;
+   text-align: center;
+   font-size: 0.9em;
+   padding: 1%;
+   align-items: center;
+   height: 60%;
+}
+
+.blocMail{
+   border-radius: 15px;
+   background-color: #b54343;
    text-align: center;
    font-size: 0.9em;
    padding: 1%;
@@ -189,7 +199,7 @@ main h2{
    flex-direction: column;
    align-items: center;
    width: auto;
-   height: 70%;   
+   height: auto;   
    font-size:calc(12px + 0.5vw);
    
 }
@@ -202,7 +212,6 @@ main h2{
    display: flex;
    flex-direction: column;
    align-items: flex-start;
-   width: 100%;
 }
 
 .sommaireProjet a{
@@ -216,6 +225,14 @@ main h2{
 
 .sommaireProjet a:visited{
    color:white;
+}
+
+.lien a{
+   color:rgb(44, 65, 156);
+}
+
+.blocMail a:visited{
+   color:rgb(255, 0, 0);
 }
 
 .sommaireProjet a:hover{
@@ -316,74 +333,6 @@ form h1{
    border-bottom: solid 2px black;
 }
 
-/*tout sauf le titre du formulaire*/
-form .principal {
-   font-size: 0.8em;
-   display: flex;
-   flex-wrap: wrap;
-}
-
-/*titre + zone de saisie*/
-form .principal .boite {
-   margin-top: 10px;
-   display: flex;
-   flex-direction: column;
-}
-
-/*comportement des boites de gauche (hors message)*/
-form .principal .gauche .boite input {
-   margin-top: 5px;
-   padding: 10px 10px;
-   border-radius: 5px;
-   border: 2px solid rgb(172, 127, 255);
-}
-
-
-form .principal .droite {
-   margin-left: 50px;
-}
-
-/*comportement de la boite message*/
-form .principal .droite .boite {
-   height: 100%;
-}
-
-/*comportement de la zone de texte du message*/
-form .principal .droite .boite textarea {
-   margin-top: 5px;
-   padding: 10px;
-   background-color: #f1f1f1;
-   border: 2px solid#747cdf;
-   border-radius: 5px;
-   resize: none;
-   height: 72%;
-   font-family: 'PT Sans', sans-serif;
-}
-
-/*style du bouton qui permet de valider le formulaire*/
-form .bouton button {
-   margin-top: 10px;
-   background-color: rgb(235, 144, 40);
-   font-size: 15px;
-   border: none;
-   padding: 10px 40px;
-   border-radius: 5px;
-   cursor: pointer;
-   margin-top: 10%;
-}
-
-form .bouton button a {
-   text-decoration: none;
-   color: black;
-}
-
-form .bouton button a:visited{
-   color:black;
-}
-
-form .bouton button:hover{
-   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
 
 footer {
    font-size: 0.8em;
@@ -445,95 +394,7 @@ footer nav {
 
 
 
-@media screen and (max-width:800px) {
 
-
-
-   header nav {
-      flex-direction: column-reverse;
-   }
-
-   .monnom{
-      flex-direction: row;
-      width: 100%;
-      height: 30%;
-      justify-content: center;
-      font-size: 50px;
-      border-radius: 0;
-      
-   }
-
-   .monnom p{
-      margin-left: 20px;
-   }
-
-
-
-   .monnom p:first-child {
-      margin-bottom: initial; /* marge inférieure plus petite */
-      margin-top: initial;
-    }
-   
-    .monnom p:nth-child(2) {
-      margin-top: initial; /* marge inférieure plus petite */
-      margin-bottom: initial;
-    }
-
-   header nav{
-      height: 70%;
-   }
-
-   header nav ul{
-      justify-content: space-around;
-      background-color: #050b26;
-      margin-top: 0.5px;
-      margin-bottom: 0.5px;
-      height: 60%;
-      width: 100%;
-      padding: 0;
-   }
-
-   header nav ul.langages {
-      
-      justify-content: center;
-      height: 40%;
-      border-radius: 0;
-   }
-
-   header {
-      height: 50%;
-      flex-direction: column;
-      position: sticky;
-      top:0;
-      background-color: white;
-      
-   }
-
-   main{
-      height: auto;
-      margin-bottom: 0;
-      margin-top: -0.5px; 
-      
-   }
-
-   .presentationBio{
-      display: block;
-   }
-
-   .presentationBio img{
-      float:right;
-      border-radius: 50%; 
-      object-fit: cover;
-      width: 150px;
-      height: 150px;
-   }  
-
-   footer{
-      position: sticky;
-      bottom: 0;
-   }
-
-}
 
 @media screen and (max-width:1266px){
    #accueil{
@@ -562,6 +423,8 @@ footer nav {
       margin-bottom: 15px;
       width: auto;
    }
+
+  
 
    .principal {
       width: auto;
@@ -653,4 +516,96 @@ footer nav {
    }
     
     
+}
+
+@media screen and (max-width:800px) {
+
+
+
+   header nav {
+      flex-direction: column-reverse;
+   }
+
+   .monnom{
+      flex-direction: row;
+      width: 100%;
+      height: 30%;
+      justify-content: center;
+      font-size: 50px;
+      border-radius: 0;
+      
+   }
+
+   .monnom p{
+      margin-left: 20px;
+   }
+
+   #retexs {
+      width: auto;
+   }
+
+   .monnom p:first-child {
+      margin-bottom: initial; /* marge inférieure plus petite */
+      margin-top: initial;
+    }
+   
+    .monnom p:nth-child(2) {
+      margin-top: initial; /* marge inférieure plus petite */
+      margin-bottom: initial;
+    }
+
+   header nav{
+      height: 70%;
+   }
+
+   header nav ul{
+      justify-content: space-around;
+      background-color: #050b26;
+      margin-top: 0.5px;
+      margin-bottom: 0.5px;
+      height: 60%;
+      width: 100%;
+      padding: 0;
+   }
+
+   header nav ul.langages {
+      
+      justify-content: center;
+      height: 40%;
+      border-radius: 0;
+   }
+
+   header {
+      height: 50%;
+      flex-direction: column;
+      position: sticky;
+      top:0;
+      background-color: white;
+      
+   }
+
+   main{
+      height: auto;
+      margin-bottom: 0;
+      margin-top: -0.5px; 
+      
+   }
+
+   .presentationBio{
+      display: block;
+   }
+
+   .presentationBio img{
+      float:right;
+      border-radius: 50%; 
+      object-fit: cover;
+      width: 150px;
+      height: 150px;
+   }  
+
+   footer{
+      position: sticky;
+      bottom: 0;
+   }
+
 }
